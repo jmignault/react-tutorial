@@ -4,32 +4,32 @@ import Form from './Form';
 
 class App extends Component {
     state = {
-	characters: []
+        characters: []
     };
     
     handleSubmit = character => {
-	this.setState({characters: [...this.state.characters, character]});
+        this.setState({characters: [...this.state.characters, character]});
     }
 
     removeCharacter = index => {
-	const { characters } = this.state;
+        const { characters } = this.state;
 
-	this.setState({
+        this.setState({
             characters: characters.filter((character, i) => { 
-		return i !== index;
+                return i !== index;
             })
-	});
+        });
     }
 
     render() {
-	return (
-	    <div className="container">
-	      <Table
-		characterData={this.state.characters}
-		removeCharacter={this.removeCharacter}/>
-	      <Form handleSubmit={this.handleSubmit}/>
-	    </div>
-	);
+        return (
+            <div className="container">
+                <Table
+                    characterData={this.state.characters}
+                    removeCharacter={this.removeCharacter}/>
+                <Form handleSubmit={this.handleSubmit}/>
+            </div>
+        );
     }
 }
 
